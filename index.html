@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Focus Circus 🎪</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="assets/whirlwind-of-dreams_95714.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- CONFETTI -->
+    <div id="confetti-layer"></div>
+
+
+    <!-- ================= LANDING SCREEN ================= -->
+
+    <section id="landing" class="screen active">
+
+        <div class="stage">
+
+            <!-- CURTAIN IMAGE -->
+            <img
+                src="assets/curtains.png"
+                class="curtain-image"
+                alt="Circus Curtains"
+            >
+
+            <!-- DISCO BALL -->
+            <img
+                src="assets/disco_ball.png"
+                class="disco"
+                alt="Disco Ball"
+            >
+
+
+            <!-- SPARKLES -->
+
+            <div class="spark left-spark">
+                ✦<br>
+                ✧<br>
+                ✦
+            </div>
+
+            <div class="spark right-spark">
+                ✦<br>
+                ✧<br>
+                ✦
+            </div>
+
+
+            <!-- LEFT MENU -->
+
+            <aside class="landing-menu">
+
+                <button id="soundBtn" class="gold">
+                    🔊 SOUND<br>
+                    <b>ON</b>
+                </button>
+
+
+                <button
+                    class="ticket"
+                    data-open="howModal"
+                >
+                    HOW IT<br>
+                    WORKS
+                </button>
+
+
+                <button
+                    class="ticket"
+                    data-open="vibeModal"
+                >
+                    THE<br>
+                    VIBE
+                </button>
+
+            </aside>
+
+
+            <!-- HERO -->
+
+            <main class="hero">
+
+                <h1 class="brand">
+
+                    <span>F</span>
+
+                    <i>★</i>
+
+                    <span>CUS</span>
+
+                    <b>CIRCUS</b>
+
+                </h1>
+
+
+                <div class="study">
+                    STUDY
+                </div>
+
+
+                <div class="like">
+                    LIKE IT'S
+                </div>
+
+
+                <div class="show">
+
+                    <em>A</em>
+
+                    SHOW
+
+                </div>
+
+
+                <p>
+                    Your productivity deserves a standing ovation.
+                </p>
+
+
+                <button
+                    id="enterShow"
+                    class="ticket big"
+                >
+                    ENTER THE<br>
+                    SHOW ➜
+                </button>
+
+            </main>
+
+
+            <!-- MASCOT -->
+
+            <div class="mascot-zone">
+
+                <div class="bubble">
+                    THE SHOW<br>
+                    CAN BEGIN! →
+                </div>
+
+
+                <img
+                    src="assets/mascot.png"
+                    class="mascot"
+                    alt="Focus Circus Mascot"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= TIMER SCREEN ================= -->
+
+    <section id="timerScreen" class="screen">
+
+        <div class="stage dark-stage">
+
+            <img
+                src="assets/curtains.png"
+                class="curtain-image"
+                alt="Circus Curtains"
+            >
+
+            <img
+                src="assets/disco_ball.png"
+                class="disco"
+                alt="Disco Ball"
+            >
+
+
+            <!-- ACT SELECTION -->
+
+            <aside class="acts">
+
+                <h2>
+                    PICK YOUR ACT 🎟️
+                </h2>
+
+
+                <button
+                    class="act"
+                    data-minutes="25"
+                    data-label="ACT I · FOCUS"
+                >
+
+                    <small>ACT I</small>
+
+                    <b>FOCUS</b>
+
+                    <strong>25 MIN</strong>
+
+                </button>
+
+
+                <button
+                    id="intermissionBtn"
+                    class="act break"
+                >
+
+                    <small>INTERMISSION</small>
+
+                    <b>SHORT BREAK</b>
+
+                    <strong>05 MIN</strong>
+
+                </button>
+
+
+                <button
+                    class="act"
+                    data-minutes="15"
+                    data-label="ACT II · LONG FOCUS"
+                >
+
+                    <small>ACT II</small>
+
+                    <b>LONG FOCUS</b>
+
+                    <strong>15 MIN</strong>
+
+                </button>
+
+            </aside>
+
+
+            <!-- TIMER -->
+
+            <main class="timer-wrap">
+
+                <div class="bulb-frame">
+
+                    <div class="timer-board">
+
+                        <h1>
+                            MAIN EVENT
+                        </h1>
+
+
+                        <div id="timerDisplay">
+                            25:00
+                        </div>
+
+
+                        <p id="currentAct">
+                            🎥 CURRENT ACT: Choose an act
+                        </p>
+
+
+                        <div class="controls">
+
+                            <button
+                                id="startBtn"
+                                class="ticket"
+                            >
+                                ▶ START
+                            </button>
+
+
+                            <button
+                                id="resetBtn"
+                                class="plain"
+                            >
+                                ↻ RESET
+                            </button>
+
+
+                            <button
+                                id="endEarlyBtn"
+                                class="danger"
+                            >
+                                ■ END EARLY
+                            </button>
+
+                        </div>
+
+
+                        <p class="hint">
+                            Choose an act, name it, then press Start.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="navigation">
+
+                    <button
+                        id="backLandingBtn"
+                        class="plain"
+                    >
+                        ← BACK TO LANDING
+                    </button>
+
+
+                    <button
+                        id="showStatsBtn"
+                        class="ticket"
+                    >
+                        SHOW STATS →
+                    </button>
+
+                </div>
+
+            </main>
+
+
+            <!-- TIMER MASCOT -->
+
+            <div class="mascot-zone timer-mascot">
+
+                <div id="timerBubble" class="bubble">
+
+                    NO DISTRACTIONS.<br>
+                    THE AUDIENCE IS WATCHING.
+
+                </div>
+
+
+                <img
+                    src="assets/mascot.png"
+                    class="mascot"
+                    alt="Focus Circus Mascot"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ACT MODAL ================= -->
+
+    <div id="actModal" class="modal">
+
+        <div class="modal-card">
+
+            <div class="circus">
+                🎪
+            </div>
+
+
+            <h1>
+                YOUR NEXT ACT
+            </h1>
+
+
+            <h2>
+                WHAT'S YOUR NEXT ACT?
+            </h2>
+
+
+            <input
+                id="actNameInput"
+                placeholder="ENTER YOUR ACT"
+                maxlength="60"
+            >
+
+
+            <button
+                id="confirmActBtn"
+                class="danger"
+            >
+                CONFIRM ACT →
+            </button>
+
+
+            <button
+                id="cancelActBtn"
+                class="text"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= INTERMISSION ================= -->
+
+    <section id="intermissionScreen" class="screen">
+
+        <div class="stage blue-stage">
+
+            <img
+                src="assets/curtains.png"
+                class="curtain-image"
+                alt="Circus Curtains"
+            >
+
+            <img
+                src="assets/disco_ball.png"
+                class="disco"
+                alt="Disco Ball"
+            >
+
+
+            <!-- BREAK TIPS -->
+
+            <aside class="tips">
+
+                <div>
+                    💧 HYDRATE<br>
+                    <b>DRINK WATER</b>
+                </div>
+
+
+                <div>
+                    🤸 STRETCH!<br>
+                    <b>MOVE AROUND</b>
+                </div>
+
+
+                <div>
+                    👀 LOOK AWAY<br>
+                    <b>REST YOUR EYES</b>
+                </div>
+
+            </aside>
+
+
+            <!-- BREAK -->
+
+            <main class="break-main">
+
+                <h1>
+                    INTERMISSION
+                </h1>
+
+
+                <h2>
+                    THAT WAS A GREAT ACT!<br>
+                    TAKE FIVE!
+                </h2>
+
+
+                <div id="breakDisplay">
+                    05:00
+                </div>
+
+
+                <p>
+                    ☕ BREAK TIME
+                </p>
+
+
+                <div class="controls">
+
+                    <button
+                        id="breakStartBtn"
+                        class="ticket"
+                    >
+                        ▶ START BREAK
+                    </button>
+
+
+                    <button
+                        id="breakResetBtn"
+                        class="plain"
+                    >
+                        ↻ RESET
+                    </button>
+
+                </div>
+
+
+                <button
+                    id="backShowBtn"
+                    class="ticket big"
+                >
+                    BACK TO THE<br>
+                    SHOW →
+                </button>
+
+            </main>
+
+
+            <div class="mascot-zone">
+
+                <div class="bubble">
+
+                    BRILLIANT! NOW GO<br>
+                    BE A HUMAN FOR 5 MINUTES
+
+                </div>
+
+
+                <img
+                    src="assets/mascot.png"
+                    class="mascot"
+                    alt="Focus Circus Mascot"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= OVATION ================= -->
+
+    <section id="ovationScreen" class="screen">
+
+        <div class="stage">
+
+            <img
+                src="assets/curtains.png"
+                class="curtain-image"
+                alt="Circus Curtains"
+            >
+
+            <img
+                src="assets/disco_ball.png"
+                class="disco"
+                alt="Disco Ball"
+            >
+
+
+            <main class="ovation-main">
+
+                <h1>
+
+                    STANDING
+
+                    <b>
+                        OVATION!
+                    </b>
+
+                </h1>
+
+
+                <p id="ovationMessage">
+                    🎭 ACT COMPLETE!
+                </p>
+
+
+                <h2 id="ovationTime">
+
+                    25 MINUTES<br>
+                    OF PURE FOCUS
+
+                </h2>
+
+
+                <div class="badges">
+
+                    <div>
+
+                        ⏱️
+
+                        <b id="badgeMinutes">
+                            25 MIN
+                        </b>
+
+                        <small>
+                            FOCUSED
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        🎯
+
+                        <b>
+                            ACT
+                        </b>
+
+                        <small>
+                            COMPLETE
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        🔥
+
+                        <b id="badgeStreak">
+                            STREAK +1
+                        </b>
+
+                        <small>
+                            SHOW MUST GO ON
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="newActBtn"
+                    class="ticket big"
+                >
+                    🎪 START NEW ACT
+                </button>
+
+
+                <button
+                    id="ovationStatsBtn"
+                    class="ticket big"
+                >
+                    📊 VIEW SHOW STATS
+                </button>
+
+            </main>
+
+
+            <div class="mascot-zone">
+
+                <div class="bubble">
+
+                    THAT DESERVES AN<br>
+                    ENCORE!!
+
+                </div>
+
+
+                <img
+                    src="assets/mascot.png"
+                    class="mascot"
+                    alt="Focus Circus Mascot"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= STATS ================= -->
+
+    <section id="statsScreen" class="screen">
+
+        <div class="stage">
+
+            <img
+                src="assets/curtains.png"
+                class="curtain-image"
+                alt="Circus Curtains"
+            >
+
+            <img
+                src="assets/disco_ball.png"
+                class="disco"
+                alt="Disco Ball"
+            >
+
+
+            <!-- LEFT STATS -->
+
+            <aside class="stats-side">
+
+                <div class="statbox">
+
+                    🎟 TOTAL SHOWTIME
+
+                    <b id="totalShowtime">
+                        0 MIN
+                    </b>
+
+                </div>
+
+
+                <div>
+
+                    🔥 ON A ROLL
+
+                    <b id="rollDays">
+                        0 DAYS
+                    </b>
+
+                </div>
+
+
+                <div class="statbox">
+
+                    🎬 ACTS DONE
+
+                    <b id="actsDone">
+                        00
+                    </b>
+
+                </div>
+
+
+                <div>
+
+                    🏆 BEST DAY
+
+                    <b id="bestDay">
+                        0 MIN
+                    </b>
+
+                </div>
+
+
+                <div class="note">
+
+                    🟡 MISSED THE SHOW? — 0 min<br>
+
+                    🟠 WARM-UP ACT — 0–25 min<br>
+
+                    🟡 MAIN EVENT — 25–60 min<br>
+
+                    🔴 SHOWSTOPPER — 60+ min
+
+                </div>
+
+            </aside>
+
+
+            <!-- MAIN STATS -->
+
+            <main class="stats-main">
+
+                <h1>
+
+                    <span>
+                        🎪 YOUR SHOW
+                    </span>
+
+                    STATS
+
+                </h1>
+
+
+                <p>
+                    EVERY GREAT SHOW LEAVES A RECORD
+                </p>
+
+
+                <div class="month-nav">
+
+                    <button id="prevMonth">
+                        ←
+                    </button>
+
+
+                    <h2 id="monthLabel"></h2>
+
+
+                    <button id="nextMonth">
+                        →
+                    </button>
+
+                </div>
+
+
+                <div class="calendar-box">
+
+                    <div class="weekdays">
+
+                        <b>MON</b>
+                        <b>TUE</b>
+                        <b>WED</b>
+                        <b>THU</b>
+                        <b>FRI</b>
+                        <b>SAT</b>
+                        <b>SUN</b>
+
+                    </div>
+
+
+                    <div
+                        id="calendar"
+                        class="calendar"
+                    ></div>
+
+                </div>
+
+
+                <button
+                    id="statsNewActBtn"
+                    class="ticket big"
+                >
+                    🎪 START NEW ACT
+                </button>
+
+            </main>
+
+
+            <div class="mascot-zone">
+
+                <div class="bubble">
+
+                    "LOOK AT ALL THAT<br>
+                    SHOWTIME!"
+
+                </div>
+
+
+                <img
+                    src="assets/mascot.png"
+                    class="mascot"
+                    alt="Focus Circus Mascot"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <div id="howModal" class="modal">
+
+        <div class="modal-card info">
+
+            <button class="close">
+                ×
+            </button>
+
+
+            <h1>
+                HOW IT WORKS
+            </h1>
+
+
+            <p>
+
+                Pick a focus act → name it → press Start →
+                finish your act → earn a standing ovation →
+                check your show stats.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= THE VIBE ================= -->
+
+    <div id="vibeModal" class="modal">
+
+        <div class="modal-card info">
+
+            <button class="close">
+                ×
+            </button>
+
+
+            <h1>
+                THE VIBE
+            </h1>
+
+
+            <p>
+
+                A circus-themed study timer where every
+                focused session becomes an act in your show.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
